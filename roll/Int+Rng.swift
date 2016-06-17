@@ -11,6 +11,6 @@ import Foundation
 extension Int {
     static func randomIntWithMax(max: Int) -> Int {
         let maximum = UInt32(max)
-        return 1 + Int(arc4random_uniform(maximum));
+        return 1 + Int(arc4random_uniform(maximum))
     }
 }
