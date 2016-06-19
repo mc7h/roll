@@ -10,8 +10,8 @@ $ roll
 $ roll d20
 
 # view help
-roll -h
-roll --help
+$ roll -h
+$ roll --help
 ~~~
 
 roll is CLI compliant; for example:
@@ -33,8 +33,8 @@ $ roll d4 > foo.txt
 The .xcodeproj is included. However, if you want to compile from the command-line use:
 
 ~~~ sh
-cd roll
-xcrun -sdk macosx swiftc main.swift IO.swift Int+Rng.swift Die.swift -o roll
+$ cd roll
+$ xcrun -sdk macosx swiftc main.swift IO.swift Int+Rng.swift Die.swift -o roll
 ~~~
 
 ## Disclaimer
