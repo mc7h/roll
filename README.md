@@ -30,6 +30,7 @@ $ roll d4 > foo.txt
 
 ## Compilation
 
+Requires Xcode 8 / Swift 3.
 The .xcodeproj is included. However, if you want to compile from the command-line use:
 
 ~~~ sh

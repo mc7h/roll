@@ -9,30 +9,30 @@
 import Foundation
 
 enum OutputType {
-    case StdErr
-    case StdOut
+    case stdErr
+    case stdOut
 }
 
 enum OptionType {
-    case Help
-    case DFour
-    case DSix
-    case DEight
-    case DTen
-    case DTwelve
-    case DTwenty
-    case Unknown
+    case help
+    case dFour
+    case dSix
+    case dEight
+    case dTen
+    case dTwelve
+    case dTwenty
+    case unknown
     
     init(value: String) {
         switch value {
-        case "-h", "--help": self = .Help
-        case "d4": self = .DFour
-        case "d6": self = .DSix
-        case "d8": self = .DEight
-        case "d10": self = .DTen
-        case "d12": self = .DTwelve
-        case "d20": self = .DTwenty
-        default: self = .Unknown
+        case "-h", "--help": self = .help
+        case "d4": self = .dFour
+        case "d6": self = .dSix
+        case "d8": self = .dEight
+        case "d10": self = .dTen
+        case "d12": self = .dTwelve
+        case "d20": self = .dTwenty
+        default: self = .unknown
         }
     }
 }
@@ -43,27 +43,28 @@ class IO {
         return (Process.arguments.first! as NSString).lastPathComponent
     }
     
-    class func printUsage(to: OutputType = .StdOut) {
-        IO.printMessage("usage: \(executableName()) [dice_type]\n", to: to)
+    class func printUsage(toStream: OutputType = .stdOut) {
+        IO.print(message: "usage: \(executableName()) [dice_type]\n", toStream: toStream)
         
         // Remember to line up additional usages with spaces:
         // IO.printMessage("       \(executableName()) -h --help\n", to: to)
     }
     
-    class func printMessage(message: String, to: OutputType = .StdOut) {
-        switch to {
-        case .StdOut:
-            if let data = message.dataUsingEncoding(NSUTF8StringEncoding) {
-                NSFileHandle.fileHandleWithStandardOutput().writeData(data)
+    class func print(message: String, toStream: OutputType = .stdOut) {
+        switch toStream {
+        case .stdOut:
+            if let data = message.data(using: String.Encoding.utf8) {
+                FileHandle.standardOutput.write(data)
+                
             }
-        case .StdErr:
-            if let data = message.dataUsingEncoding(NSUTF8StringEncoding) {
-                NSFileHandle.fileHandleWithStandardError().writeData(data)
+        case .stdErr:
+            if let data = message.data(using: String.Encoding.utf8) {
+                FileHandle.standardError.write(data)
             }
         }
     }
     
-    class func getOption(option: String) -> (option:OptionType, value: String) {
+    class func value(fromOption option: String) -> (option:OptionType, value: String) {
         return (OptionType(value: option), option)
     }
 }
