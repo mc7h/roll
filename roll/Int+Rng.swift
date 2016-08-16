@@ -9,8 +9,8 @@
 import Foundation
 
 extension Int {
-    static func randomIntWithMax(max: Int) -> Int {
-        let maximum = UInt32(max)
+    static func randomInt(withMax: Int) -> Int {
+        let maximum = UInt32(withMax)
         return 1 + Int(arc4random_uniform(maximum))
     }
 }

@@ -10,28 +10,28 @@ import Foundation
 
 class Die {
     
-    var type = OptionType.Unknown
+    var type = OptionType.unknown
     
-    init(option: OptionType) {
-        self.type = option
+    init(withOption: OptionType) {
+        self.type = withOption
     }
     
     func roll() -> Int {
         var result: Int
         
         switch self.type {
-        case .DFour:
-            result = Int.randomIntWithMax(4)
-        case .DSix:
-            result = Int.randomIntWithMax(6)
-        case .DEight:
-            result = Int.randomIntWithMax(8)
-        case .DTen:
-            result = Int.randomIntWithMax(10)
-        case .DTwelve:
-            result = Int.randomIntWithMax(12)
-        case .DTwenty:
-            result = Int.randomIntWithMax(20)
+        case .dFour:
+            result = Int.randomInt(withMax:4)
+        case .dSix:
+            result = Int.randomInt(withMax:6)
+        case .dEight:
+            result = Int.randomInt(withMax:8)
+        case .dTen:
+            result = Int.randomInt(withMax:10)
+        case .dTwelve:
+            result = Int.randomInt(withMax:12)
+        case .dTwenty:
+            result = Int.randomInt(withMax:20)
         default:
             result = 0
         }
