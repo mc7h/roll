@@ -8,15 +8,13 @@
 
 import Foundation
 
-// TODO: 1. handle a series of dice e.g roll d6 d6 d10 d20
-
-switch Process.arguments.count {
+switch CommandLine.arguments.count {
 case 1:
     var res = Die(withOption: .dSix).roll()
     IO.print(message: "\(res)\n")
 
 case 2:
-    let (option, value) = IO.value(fromOption: Process.arguments[1])
+    let (option, value) = IO.value(fromOption: CommandLine.arguments[1])
     
     guard (option != OptionType.unknown) else {
         IO.print(message:"\(IO.executableName()): illegal dice type - '\(value)'. Try d4, d6, d20 etc.\n", toStream: .stdErr)

@@ -40,7 +40,7 @@ enum OptionType {
 class IO {
     
     class func executableName() -> String {
-        return (Process.arguments.first! as NSString).lastPathComponent
+        return (CommandLine.arguments.first! as NSString).lastPathComponent
     }
     
     class func printUsage(toStream: OutputType = .stdOut) {
