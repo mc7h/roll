@@ -2,3 +2,7 @@ language: objective-c
 osx_image: xcode8
 xcode_project: roll.xcodeproj # path to your xcodeproj folder
 xcode_scheme: roll
+
+script:
+- xcodebuild clean build -project roll.xcodeproj -scheme roll
+
