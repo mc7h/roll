@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mc7h/roll.svg?branch=master)](https://travis-ci.org/mc7h/roll)
+
 # roll (swift + cli + dice)
 
 **roll** is a command-line tool written in Swift that allows you to roll D&D dice.
