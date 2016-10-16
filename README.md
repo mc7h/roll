@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mc7h/roll.svg?branch=master)](https://travis-ci.org/mc7h/roll)
+[![Build Status](https://travis-ci.org/mc7h/roll.svg?branch=master)](https://travis-ci.org/mc7h/roll) [![codebeat badge](https://codebeat.co/badges/69e9dc31-8425-4f30-9641-ee88d444c2a7)](https://codebeat.co/projects/github-com-mc7h-roll)
 
 # roll (swift + cli + dice)
 
