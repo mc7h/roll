@@ -4,7 +4,7 @@
 
 ~~~ sh
 # to roll a 6-sided die (d6)
-$ roll 
+$ roll
 
 # to roll a 20-sided die (d20)
 $ roll d20
@@ -18,10 +18,10 @@ roll is CLI compliant; for example:
 
 ~~~ sh
 # to store output in a variable
-$ var=$(roll) 
+$ var=$(roll)
 
 # to pipe output into another program
-$ roll d20 | pbcopy 
+$ roll d20 | pbcopy
 
 # to redirect output to a file
 $ roll d4 > foo.txt
@@ -30,13 +30,14 @@ $ roll d4 > foo.txt
 
 ## Compilation
 
-Requires Xcode 8 / Swift 3.
-The .xcodeproj is included. However, if you want to compile from the command-line use:
+roll is written in Swift 3.
 
 ~~~ sh
 $ cd roll
-$ xcrun -sdk macosx swiftc main.swift IO.swift Int+Rng.swift Die.swift -o roll
+$ swift build
 ~~~
+
+The .xcodeproj is also included.
 
 ## Disclaimer
 
